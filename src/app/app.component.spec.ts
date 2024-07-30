@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent], // Import the standalone component
     }).compileComponents();
   });
 
@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'string-calculator' title`, () => {
+  it(`should have as title 'String Calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('string-calculator');
+    expect(app.title).toEqual('String Calculator');
   });
 
-  it('should render title', () => {
+  it('should render title in the header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, string-calculator');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'String Calculator'
+    );
   });
 });
